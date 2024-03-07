@@ -6,7 +6,7 @@
 # asignamos el primer y segundo elementos de la secuencia a las variables x y y en
 # una única sentencia.
 m = [ 'pásalo', 'bien' ]
-x, y = m #asignamos pasalo primer elementos a x  ~~¡¡¡~~~y asignamos bien al segundo elemento y
+x, y = m #asignamos pasalo al primer elementos x  ~~¡¡¡~~~  asignamos bien al segundo elemento y
 # (x,y)
 print(x)
 print(y)

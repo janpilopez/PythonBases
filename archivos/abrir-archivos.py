@@ -21,4 +21,8 @@ print((manejador_archivo.read()))
 # print(len(manejador_archivo.read()))#la segunda vez carga cero, porque una vez leiodo vacia el contenido por completo
 
 
+#Windows
+man = open('C:/Users/jp/Documents/Python/archivos/mbox-short.txt')
+#Linux
+man = open('/home/jean/Documentos/python/PythonBases/archivos/mbox-short.txt') 
 
