@@ -5,6 +5,9 @@
 # antes se debe a que, aunque son muy poderosas, son un poco más complicadas y
 # toma algo de tiempo acostumbrarse a su sintaxis.
 
+# + = 1 o mas veces
+# * = o o mas veces
+
 # Búsqueda de líneas que contengan 'From'
 import re
 #Linux
