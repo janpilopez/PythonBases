@@ -2,6 +2,8 @@
 import re
 s = 'Una nota de csev@umich.edu a cwen@iupui.edu sobre una reunión @2PM'
 lst = re.findall(r'\S+@\S+', s)
+#Siempre primero va la consulta (los caracteres) y luego la expresion + o *
+#el . es cualquier caracter o letra intermedia
 print(lst)
 # El método findall() busca en la cadena en el segundo argumento y retorna una
 # lista de todas las cadenas que parecen ser direcciones de email. Estamos usando
@@ -12,7 +14,7 @@ print(lst)
 # tengan al menos un carácter que no sea un espacio, seguido de una @, seguido de al
 # menos un carácter que no sea un espacio. La expresión \S+ coincidirá con cuantos
 # caracteres distintos de un espacio sea posible.
-
+print('****************************************************-------------------------*********************************************************************************')
 # Búsqueda de líneas que tengan una arroba entre caracteres
 import re
 # man = open('mbox-short.txt')
@@ -20,8 +22,8 @@ man = open('/home/jean/Documentos/python/PythonBases/archivos/mbox-short.txt')
 
 for linea in man:
     linea = linea.rstrip()
-    x = re.findall(r'\S+@\S+', linea)
-    if len(x) > 0:
+    x = re.findall(r'\S+@\S+', linea)#Lo mismo que el ejercicio anterior, pero aqui pasamos un archivo de texto
+    if len(x) > 0: #findall retorna una lista, verificamos si existe algo dentro
         print(x)
 
 # Con esto, leemos cada línea y luego extraemos las subcadenas que coincidan con
@@ -45,14 +47,15 @@ print('*************************************************************************
 # Búsqueda de líneas que tengan una arroba entre caracteres
 # Los caracteres deben ser una letra o un número
 import re
-#Esto significa que la cadena se tomara como arriba pero al encontrar antes o despues de @ algun caracter no lo tomará en cuenta
-#es lo mismo de arriba pero la diferencia que arriba corta la subcadena cuando encuentra un espacio en blanco de la cadena principal
+#El mismo ejemplo que arriba, pero al encontrar antes o despues de @ algun caracter que no sea numero o letra no lo tomará en cuenta
+#es lo mismo de arriba pero la diferencia de arriba es que corta la subcadena cuando no encuentra numero o letra y solo muestra correo validos con numeros y letras
 man = open('/home/jean/Documentos/python/PythonBases/archivos/mbox-short.txt') 
 for linea in man:
     linea = linea.rstrip()
     x = re.findall(r'[a-zA-Z0-9]\S+@\S+[a-zA-Z]', linea)
     if len(x) > 0:
         print(x)
+#Cuando se ubica algo entre corchete es para que busque entre esos caracteres, tipo como un rango permitido
         
 # Nótese que en las líneas donde aparece source@collab.sakaiproject.org, nues-
 # tra expresión regular eliminó dos caracteres al final de la cadena (“>;”). Esto
