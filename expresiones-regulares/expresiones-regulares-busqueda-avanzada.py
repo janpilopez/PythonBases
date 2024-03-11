@@ -45,8 +45,12 @@ for linea in man:
 # dinero utilizando la siguiente expresión regular:
 import re
 x = 'We just received $10.00 for cookies.'
-y = re.findall('\$[0-9.]+',x)
+y = re.findall('\$[0-9.]+',x) #Especificamos que el caracter $ debe ser buscado , esto lo especificamos con la barra invertirda anteponiendolo
+                    #si no puede dar el caso que lo tome como una expresion regular
 print(y)
+y = re.findall('[0-9.]+',x) #Si le quitamos el \ es nulo, y si le quitamos el dolar retorna una lista con las coincidencias
+        #    ['10.00', '.']
+                
 # Dado que antepusimos la barra invertida al signo “$”, encuentra una coincidencia
 # con el signo en la cadena en lugar de con el final de la línea, y el resto de la
 # expresión regular coincide con uno o más dígitos del carácter “.” Nota: dentro de
