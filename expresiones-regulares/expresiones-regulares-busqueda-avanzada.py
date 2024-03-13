@@ -58,3 +58,30 @@ y = re.findall('[0-9.]+',x) #Si le quitamos el \ es nulo, y si le quitamos el do
 # [0-9.], efectivamente significa dígitos o un punto. Cuando no está entre corchetes,
 # el punto es el carácter “comodín” que coincide con cualquier carácter. Cuando está
 # dentro de corchetes, un punto es un punto.
+
+
+print('------------------------')
+#Ejemplo con signo $ al final caracter $ expresion regular $
+import re
+x = 'We just received $10.00 for cookies'
+y = re.findall(r's$', x) #Solo imprime la s si encuentra concidencia al final
+# y = re.findall(r'a$', x) #No imprime nada porque no encuentra la a
+print(y)
+
+
+print('------------------------')
+
+#EJEMPLO AMBICIOSO Y NO AMBICIOSO
+#Por ejemplo, considera el siguiente patrón de expresión regular: [a*?b]
+#Si se aplica a la cadena "aabab", la coincidencia para .*? será "aab", ya que es la secuencia más corta que satisface la expresión regular completa.
+#Si usamos /a.*b/ en la misma cadena, la coincidencia para .* será "aabab", ya que es la secuencia más larga que satisface la expresión regular completa.
+import re
+x = 'aabab'
+y = re.findall('a*?b', x) 
+print(y) #['aab', 'ab']
+
+print('------------------------')
+import re
+x = 'aabab'
+y = re.findall('a?b', x) 
+print(y) #['ab', 'ab']
