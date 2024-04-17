@@ -8,7 +8,8 @@
 import socket #SOPORTE PROTOCOLO HTTP HIPERTEXTO
 misock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 misock.connect(('data.pr4e.org', 80))
-cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode()
+cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode() #Si utilizamos encode ya codificamos a byte y ya no es necesario byte osea la (b) delante de la linea de llamada
+# HTTP dice que debemos enviar el comando GET seguido de una línea en blanco. \r\n representa un salto de línea (end of line, o EOL en inglés),
 misock.send(cmd)
 while True:
     datos = misock.recv(512)
@@ -45,6 +46,8 @@ misock.close()
 # It is the east and Juliet is the sun
 # Arise fair sun and kill the envious moon
 # Who is already sick and pale with grief
+
+
 # La salida comienza con la cabecera que el servidor envía para describir el docu-
 # mento. Por ejemplo, la cabecera Content-Type indica que el documento es un
 # documento de texto sin formato (text/plain).

@@ -70,7 +70,7 @@ for linea in man:
 # indicar que un carácter puede repetirse cualquier cantidad de veces usando los
 # caracteres * o + en tu expresión regular. Estos caracteres especiales indican que
 # en lugar de coincidir con un solo carácter en la cadena de búsqueda, coinciden con
-# cero o más caracteres (en el caso del asterisco) o con uno o más caracteres (en el
+# cero o más caracteres (* en el caso del asterisco) o con uno o más caracteres (+ en el
 # caso del signo de suma).
 # Podemos reducir más las líneas que coincidan usando un carácter comodín en el
 # siguiente ejemplo:
