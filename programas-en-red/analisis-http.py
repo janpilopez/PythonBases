@@ -49,6 +49,8 @@ ctx.verify_mode = ssl.CERT_NONE
 url = input('Introduzca - ')  # https://docs.python.org
 html = urllib.request.urlopen(url).read()
 # leer los datos de la web y buscar solo los enlaces, los parenteces indican que solo extrae y selecciona los enlaces
-enlaces = re.findall(b'href="(http[s]?://.*?)"', html) #b o .encode()
+#si le quitamos el .+? = quiere decir que sera una busca no codiciosa y que si o si debe tener uno o mas caracteres despues del https// o http// y al final la comilla doble
+#por lo que extrae cualquier cadena urls
+enlaces = re.findall(b'href="(http[s]?://.+?)"', html) #b o .encode()
 for enlace in enlaces:
     print(enlace.decode())
